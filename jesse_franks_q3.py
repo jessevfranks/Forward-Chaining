@@ -11,9 +11,9 @@ def forward_chain(rules, facts):
     # Assuming that a "simple" algorithm only expects 1 or 0 operators (ie. A & B | C => D is an invalid input),
     # and that the predicate only contains one inference (ie. A & B => C | D is invalid
     for rule_str in rules:
-        conditions_str, inference = rule_str.split(" => ")
+        conditions_str, inference = rule_str.split("=>")
         rule_data = {
-            'inference': inference,
+            'inference': inference.strip(),
             'premises': set()
         }
 
