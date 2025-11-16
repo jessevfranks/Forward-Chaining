@@ -13,7 +13,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_advanced(self):
         rules_input = [
-            "A & B => C",
+            "A&B => C", # Testing spacing
             "C => D",
             "D | E => F",  # Added an OR rule
             "F & G => H",

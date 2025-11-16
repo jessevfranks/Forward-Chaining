@@ -9,7 +9,7 @@ def forward_chain(rules, facts):
     agenda = deque(facts)
 
     # Assuming that a "simple" algorithm only expects 1 or 0 operators (ie. A & B | C => D is an invalid input),
-    # and that the predicate only contains one inference (ie. A & B => C | D is invalid)
+    # and that the predicate only contains one inference (ie. A & B => C | D is invalid
     for rule_str in rules:
         conditions_str, inference = rule_str.split(" => ")
         rule_data = {
@@ -17,12 +17,12 @@ def forward_chain(rules, facts):
             'premises': set()
         }
 
-        if " & " in conditions_str:
-            premises = conditions_str.split(" & ")
+        if "&" in conditions_str:
+            premises = conditions_str.split("&")
             counts.append(len(premises))
             rule_data['premises'] = set(p.strip() for p in premises)
-        elif " | " in conditions_str:
-            premises = conditions_str.split(" | ")
+        elif "|" in conditions_str:
+            premises = conditions_str.split("|")
             counts.append(1)
             rule_data['premises'] = set(p.strip() for p in premises)
         else:
